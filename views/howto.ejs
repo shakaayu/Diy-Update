@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> ASRA </title>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /*body{
+    background-image: url("http://www.publicdomainpictures.net/pictures/130000/velka/textured-background-1441649840Brm.jpg");
+  }*/
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .bg-1 { 
+       background-color: #0000; /* Cyan */
+        color: #00ACC1;
+    }
+    .navbar {
+       margin-bottom: 0;
+      border-radius: 0;
+      margin-right: 0;
+      margin-left:0;
+    }
+     
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #00ACC1;
+      height: 100%;
+    }
+
+        
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #fff;
+      color: black;
+
+    margin: 0;
+      height: 100px;
+      width: 100%;   
+
+    }
+
+    ** single-item multi carousel */
+.carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+.carousel-inner.onebyone-carosel > .item {
+-webkit-transition: -webkit-transform .6s ease-in-out;
+-o-transition: -o-transform .6s ease-in-out;
+transition: transform .6s ease-in-out;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+-webkit-perspective: 1000;
+perspective: 1000;
+}
+
+.carousel-inner.onebyone-carosel > .item.next,
+.carousel-inner.onebyone-carosel > .item.active.right {
+left: 0;
+-webkit-transform: translate3d(33.33%, 0, 0);
+transform: translate3d(33.33%, 0, 0);
+}
+
+.carousel-inner.onebyone-carosel > .item.prev,
+.carousel-inner.onebyone-carosel > .item.active.left {
+left: 0;
+-webkit-transform: translate3d(-33.33%, 0, 0);
+transform: translate3d(-33.33%, 0, 0);
+}
+
+.carousel-inner.onebyone-carosel > .item.next.left,
+.carousel-inner.onebyone-carosel > .item.prev.right,
+.carousel-inner.onebyone-carosel > .item.active {
+left: 0;
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+}
+
+.carousel-inner.onebyone-carosel > .active,
+.carousel-inner.onebyone-carosel > .next,
+.carousel-inner.onebyone-carosel > .prev {
+display: block;
+}
+
+.carousel-inner.onebyone-carosel > .active {
+left: 0;
+}
+
+.carousel-inner.onebyone-carosel > .next,
+.carousel-inner.onebyone-carosel > .prev {
+position: absolute;
+top: 0;
+width: 100%;
+}
+
+.carousel-inner.onebyone-carosel > .next {
+left: 33.33%;
+}
+
+.carousel-inner.onebyone-carosel > .prev {
+left: -33.33%;
+}
+
+.carousel-inner.onebyone-carosel > .next.left,
+.carousel-inner.onebyone-carosel > .prev.right {
+left: 0;
+}
+
+.carousel-inner.onebyone-carosel > .active.left {
+left: -33.33%;
+}
+
+.carousel-inner.onebyone-carosel > .active.right {
+left: 33.33%;
+}
+   
+  </style>
+</head>
+
+<body>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#myCarousel').carousel({
+        interval: 0
+        
+    })
+    $('.fdi-Carousel .item').each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length > 0) {
+            next.next().children(':first-child').clone().appendTo($(this));
+        }
+        else {
+            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+        }
+    });
+});
+
+</script>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid bg-1 text-center">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/"><img src="/images/yesari.png" height="35px" width="80px"></a>
+    </div>
+    
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">How to
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="howto">Crafts & Decor</a></li>
+          <li><a href="howto">Fashion</a></li>
+          <li><a href="howto">Tech Projects</a></li>
+        </ul></li>
+
+        <li><a href="buy">Buy here</a>
+
+        </li>
+        <li><a href="posturproject">Post your project</a></li>
+
+      </ul>
+
+
+      <form class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="container">
+        <div class="row">
+        <h1><br>Crafts and Decor</h1>
+            <div class="span12">
+                <div class="well">
+                    <div id="myCarousel" class="carousel fdi-Carousel slide">
+                     <!-- Carousel items -->
+                        
+                            <div class="carousel-inner onebyone-carosel">
+                                <div class="item active">
+                                    <div class="col-md-4">
+                                        <a href="jellyfish"><img src="https://s-media-cache-ak0.pinimg.com/736x/82/47/7c/82477cdeba2d21dbef39a747421cf015.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Jellyfish</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="sukul"><img src="http://img10.deviantart.net/3460/i/2012/068/c/e/sukul_by_aanhsirk-d4s6tor.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Sukul</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="ballerina"><img src="https://s-media-cache-ak0.pinimg.com/originals/02/7e/a8/027ea83cc8a644a5b430f37ac220e567.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Ballerina</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
+                        </div>
+                        <!--/carousel-inner-->
+                    </div><!--/myCarousel-->
+                    </div>
+                    </div>
+                    
+
+               
+
+
+
+<div class="row">
+        <h1><br>Fashion</h1>
+            <div class="span12">
+                <div class="well">
+                    <div id="myCarousel1" class="carousel fdi-Carousel slide">
+                     <!-- Carousel items -->
+                        
+                            <div class="carousel-inner onebyone-carosel">
+                                <div class="item active">
+                                    <div class="col-md-4">
+                                        <a href="outer"><img src="https://s-media-cache-ak0.pinimg.com/236x/8e/39/ab/8e39ab88b7730c942b54f577faae6a7c--crochet-vest-pattern-crochet-vests.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Peek-a-Boo Outer</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="http://themerrythought.com/wp-content/uploads/DIY-Wood-Earrings-The-Merrythought.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Earrings</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj7Gwomf1qQ6YNgP04p9K6pMw6H6q6RF5Xr2vBJyAVzx5ieLlsTg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Gloves</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel1" data-slide="prev"></a>
+                            <a class="right carousel-control" href="#myCarousel1" data-slide="next"></a>
+                        </div>
+                        <!--/carousel-inner-->
+                    </div><!--/myCarousel-->
+                </div><!--/well-->
+            </div>
+        
+
+
+<div class="row">
+        <h1><br>Tech Projects</h1>
+            <div class="span12">
+                <div class="well">
+                    <div id="myCarousel2" class="carousel fdi-Carousel slide">
+                     <!-- Carousel items -->
+                        
+                            <div class="carousel-inner onebyone-carosel">
+                                <div class="item active">
+                                    <div class="col-md-4">
+                                        <a href="arduinocar"><img src="https://cdn.instructables.com/FI9/N2YM/GOSDJCGM/FI9N2YMGOSDJCGM.MEDIUM.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Arduino Car</div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="arduinoled"><img src="https://cdn.instructables.com/FL5/NZLS/GF7B36TM/FL5NZLSGF7B36TM.MEDIUM.jpg?width=614" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Leds Flash to Music</div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="https://i.ytimg.com/vi/Eu1MQ-rq37w/hqdefault.jpg" style=" height:250px; width:250px" class="img-responsive center-block"></a>
+                                        <div class="text-center">Power Bank</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel2" data-slide="prev"></a>
+                            <a class="right carousel-control" href="#myCarousel2" data-slide="next"></a>
+                        </div>
+                        <!--/carousel-inner-->
+                    </div><!--/myCarousel-->
+                </div><!--/well-->
+            </div>
+        </div>
+
+
+
+    </div>
+    </body>
+
+
+
+
+
+<footer class="container-fluid text-center">
+
+     <br> <hr><p>© Asra 2017
+  
+        
+        <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="about" color="white"><span class="glyphicon glyphicon-chevron-right"></span> About us</a></li>
+        <li><a href="https://www.facebook.com"><span class="glyphicon glyphicon-chevron-right"></span> Contact Us on Facebook</a></li>
+
+      </ul></p>
+</footer>
+
+
+  
+</html>

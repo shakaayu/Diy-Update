@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<script type="text/javascript">
+  
+
+
+
+alert ("Register before you post on the site.");
+
+ // Redirecting to other page.
+
+
+</script>
+
+
+<style type="text/css">
+
+.bg-1 { 
+       background-color: #0000; /* black */
+        color: #00ACC1;
+    }
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      margin-right: 0;
+      margin-left:0;
+    }
+     
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #00ACC1;
+      height: 100%;
+    }
+    footer {
+      background-color: #000;
+      color: white;
+      margin-right: 50px;
+      margin-left:50px;
+      height: 100px;
+      width: 92%;
+      
+      
+    }
+      
+</style>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid bg-1 text-center">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/"><img src="/images/yesari.png" height="35px" width="80px"></a>
+    </div>
+    
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">How to
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="howto">Crafts & Decor</a></li>
+          <li><a href="howto">Fashion</a></li>
+          <li><a href="howto">Tech Projects</a></li>
+        </ul></li>
+
+        <li><a href="buy">Buy here</a>
+
+        </li>
+        <li class = "active"><a href="#">Post your project</a></li>
+
+      </ul>
+
+
+      <form class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><%= typeof curuser!='undefined' ? curuser : '' %></a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+	<div class="row">
+	    
+	    <div class="col-md-8 col-md-offset-2">
+	        
+    		<h1><br><br>Post your ideas</h1>
+    		
+    		<form action="">
+    		    
+    		    
+    		    <div class="form-group">
+    		        <label for="title">Name your project<span class="require">*</span></label>
+    		        <input type="text" class="form-control" name="title" /><br>
+
+    		    <label for="title">Select your option</label>
+    		    <div class="container">
+  					<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select your option
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Crafts&Decor</a></li>
+      <li><a href="#">Fashion</a></li>
+      <li><a href="#">Tech Projects</a></li>
+    </ul>
+  </div>
+</div>
+
+    		    
+    		    <div class="form-group">
+    		        <label for="description"><br>Project Description<span class="require">*</span></label>
+    		        <textarea rows="5" class="form-control" name="description" ></textarea>
+    		    </div>
+
+    		    <div class="form-group">
+    		    	<label for="title">Materials Required<span class="require">*</span></label>
+    		    	<input type="text" class="form-control" name="title" />
+    		    </div>
+
+    		    <div class="form-group">
+    		    	<label for="title">Upload Pictures/Videos</label>
+    		    	<input type="file" name="fileupload" accept="image/*" />
+    		    </div>
+
+    		    <div class="form-group">
+    		        <p><span class="require">*</span> - required fields</p>
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <button type="submit" class="btn btn-success" style="width:50% display:inline-block" onClick='alert("Your post has been submitted")'>Post</button>
+    		        <button class="btn btn-default">
+    		            Cancel
+    		        </button>
+    		    </div>
+    		    
+    		</form>
+		</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+<footer class="container-fluid text-center">
+
+      <p><br />© Asra 2017
+  
+        
+        <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="about" color="white"><span class="glyphicon glyphicon-chevron-right"></span> About us</a></li>
+        <li><a href="https://www.facebook.com"><span class="glyphicon glyphicon-chevron-right"></span> Contact Us on Facebook</a></li>
+
+      </ul></p>
+</footer>
+
+

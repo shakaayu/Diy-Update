@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> ASRA </title>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /*body{
+    background-image: url("http://www.publicdomainpictures.net/pictures/130000/velka/textured-background-1441649840Brm.jpg");
+  }*/
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .bg-1 { 
+       background-color: #0000; 
+        color: #878787;
+    }
+    .navbar {
+       margin-bottom: 0;
+      border-radius: 0;
+      margin-right: 0;
+      margin-left:0;
+    }
+     
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #878787;
+      height: 100%;
+    }
+
+        
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #000;
+      color: white;
+
+      height: 100px;
+      width: 100%;
+      
+      
+    }
+
+   
+   /* LIST VIEW */
+
+
+
+/*    Reset & General
+---------------------------------------------------------------------- */
+* { margin: 0px; padding: 0px; }
+body {
+  font-family: "Open Sans", sans-serif; 
+  overflow:hidden;  
+  overflow-y: scroll;
+}
+#wrapper{
+  overflow: hidden;
+  height: 1153px;
+  width: 1643px;
+  background:#fff;
+}
+#header{
+  height:92px; 
+  background:#fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/header-icons.png") 1448px -2px no-repeat;
+  border-bottom:1px solid #eee;
+}
+#header ul{padding:33px 0 0 45px;}
+#header li{
+  list-style:none;
+  float:left;
+  margin-right:30px;  
+}
+#header li a{
+  font-weight:700;
+  color:#333;
+  font-size:14px; 
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+#headerli a:hover{
+  color:#000;
+  cursor:pointer;
+}
+#grid-selector{
+  height: 10px;
+  width: 1291px;
+  padding: 40px 0 40px 30px;
+  float: left;
+  color: #5d5f68;
+  font-size: 14px;
+}
+#grid-menu{
+  float:right;
+  width:105px;
+}
+#grid-menu ul{
+  width: 65px;
+  float: right;
+  position: relative;
+  top: -1px;}
+#grid-menu li{   
+   float:right;
+   width:25px;
+   height:25px;
+   list-style:none;
+}
+#grid-menu li a{   
+     display:block;
+   width:25px;  
+   height:25px;
+   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/grid-menu.png") 0 0  no-repeat;
+}
+#grid-menu li.smallGrid{margin-right:7px;}
+#grid-menu li.smallGrid a{background-position:0 -33px;}
+#grid-menu li.largeGrid a{background-position:-37px 0;}
+
+#grid-menu li.smallGrid a.active{background-position:0 0;}
+#grid-menu li.largeGrid a.active{background-position:-37px -33px;}
+ 
+
+#grid{  
+  width: 1335px;
+  position: absolute;
+  left: 340px;
+  height: 1200px;
+  top: 180px;
+}
+#sidebar{
+  float:left;
+  background:#fff;
+  width:275px;  
+  padding:13px 0 0 45px;
+  height:1400px;
+  border-right:1px solid #eee;
+}
+#sidebar h3{
+  color:#262626;
+  text-transform:uppercase;
+  font-size:14px;
+  font-weight:700;
+  padding:35px 0 10px 0;
+  letter-spacing:1px;
+  clear:both;
+}
+#cart{padding:0px;}
+#cart .empty{
+  font-style:italic;
+  color:#a0a3ab;
+  font-size:14px;
+  letter-spacing:1px; 
+}
+#sidebar .checklist{
+  padding:0;
+}
+
+.checklist ul li{ 
+  font-size:14px;
+  font-weight:400;
+  list-style:none;
+  padding: 7px 0 7px 23px;
+}
+.checklist li span{
+  float:left;
+  width:11px;
+  height:11px;
+  margin-left:-23px;
+  margin-top:4px;
+  border: 1px solid #d1d3d7;
+  position:relative;  
+}
+.sizes li span, .categories .sizes li{
+  -webkit-transition: all 300ms ease-out;
+     -moz-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+       -o-transition: all 300ms ease-out;
+          transition: all 300ms ease-out;
+}
+.checklist li a{
+  color:#676a74;
+  text-decoration:none; 
+  -webkit-transition: all 300ms ease-out;
+     -moz-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+       -o-transition: all 300ms ease-out;
+          transition: all 300ms ease-out;
+}
+.checklist li a:hover{  
+  color:#222;
+  -webkit-transition: all 300ms ease-out;
+     -moz-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+       -o-transition: all 300ms ease-out;
+          transition: all 300ms ease-out;
+}
+.checklist a:hover span{  
+  border-color:#a6aab3; 
+}
+.sizes a:hover span, .categories a:hover span{  
+  border-color:#a6aab3;
+  -webkit-transition: all 300ms ease-out;
+     -moz-transition: all 300ms ease-out;
+      -ms-transition: all 300ms ease-out;
+       -o-transition: all 300ms ease-out;
+          transition: all 300ms ease-out;
+}
+.checklist a span span{border:none;margin:0;float:none; position:absolute;top:0;left:0;}
+.checklist a .x{
+  display:block;
+  width:0;   
+  height:2px;
+  background:#2d2d2d;
+  top:6px;
+  left:2px; 
+  -ms-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
+    transform: rotate(45deg); 
+  -webkit-transition: all 50ms ease-out;
+}
+.checklist a .x.animate{
+  width:4px;
+  -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+      -ms-transition: all 100ms ease-in;
+       -o-transition: all 100ms ease-in;
+          transition: all 100ms ease-in;
+}
+.checklist a .y{
+  display:block;
+  width:0px; 
+  height:2px;
+  background:#2d2d2d;
+  top:4px;
+  left:3px; 
+  -ms-transform: rotate(13deg); 
+    -webkit-transform: rotate(135deg); 
+    transform: rotate(135deg);  
+  -webkit-transition: all 50ms ease-out;
+}
+.checklist a .y.animate{
+  width:8px;
+  -webkit-transition: all 100ms ease-out;
+     -moz-transition: all 100ms ease-out;
+      -ms-transition: all 100ms ease-out;
+       -o-transition: all 100ms ease-out;
+          transition: all 100ms ease-out;
+}
+.checklist .checked span{
+  border-color:#8d939f;
+}
+.colors ul, .sizes ul{
+  float:left; width:130px;  
+}
+.colors ul li{padding-left:21px;}
+.colors a span{
+  border:none;
+  position:relative;
+  border-radius:100%;
+  background-color:#eae3d3;
+  width:13px;
+  height:13px;
+  margin-left:-20px;
+}
+.colors a:hover span{
+  width:15px;
+  height:15px;
+  margin-top:3px;
+  margin-left:-21px;
+}
+#sidebar img{margin-top:6px;}
+
+.product{
+    position: relative;
+    perspective: 800px;
+    width:306px;
+    height:471px;
+    transform-style: preserve-3d;
+    transition: transform 5s;
+  float:left; 
+  margin-right: 23px;
+  -webkit-transition: width 500ms ease-in-out;
+     -moz-transition: width 500ms ease-in-out;
+    -ms-transition: width 500ms ease-in-out;
+     -o-transition: width 500ms ease-in-out;
+        transition: width 500ms ease-in-out;
+}
+.product-front img{width:100%;}
+.product-front, .product-back{
+  width:315px;
+  height:480px;
+  background:#fff;
+  position:absolute;
+  left:-5px;
+  top:-5px;
+  -webkit-transition: all 100ms ease-out; 
+       -moz-transition: all 100ms ease-out; 
+         -o-transition: all 100ms ease-out; 
+            transition: all 100ms ease-out; 
+}
+.product-back{
+  display:none;
+  transform: rotateY( 180deg );
+}
+.make3D.animate .product-back,
+.make3D.animate .product-front,
+div.large .product-back{
+  top:0px;
+  left:0px;
+  -webkit-transition: all 100ms ease-out; 
+       -moz-transition: all 100ms ease-out; 
+         -o-transition: all 100ms ease-out; 
+            transition: all 100ms ease-out; 
+}
+.make3D{
+  width:306px;
+  height:470px;
+  position:absolute;    
+  top:10px;
+  left:10px;  
+  overflow:hidden;
+    transform-style: preserve-3d;
+  -webkit-transition:  100ms ease-out; 
+       -moz-transition:  100ms ease-out; 
+         -o-transition:  100ms ease-out; 
+            transition:  100ms ease-out;
+}
+div.make3D.flip-10{
+   -webkit-transform: rotateY( -10deg );
+         -moz-transform: rotateY( -10deg );
+           -o-transform: rotateY( -10deg );
+              transform: rotateY( -10deg );
+         transition:  50ms ease-out;      
+}
+div.make3D.flip90{
+   -webkit-transform: rotateY( 90deg );
+         -moz-transform: rotateY( 90deg );
+           -o-transform: rotateY( 90deg );
+              transform: rotateY( 90deg );
+         transition:  100ms ease-in;      
+}
+div.make3D.flip190{
+   -webkit-transform: rotateY( 190deg );
+         -moz-transform: rotateY( 190deg );
+           -o-transform: rotateY( 190deg );
+              transform: rotateY( 190deg );
+         transition:  100ms ease-out;       
+}
+div.make3D.flip180{
+   -webkit-transform: rotateY( 180deg );
+         -moz-transform: rotateY( 180deg );
+           -o-transform: rotateY( 180deg );
+              transform: rotateY( 180deg );
+         transition:  150ms ease-out;       
+}
+.make3D.animate{
+  top:5px;
+  left:5px;
+  width:315px;
+  height:480px;
+  box-shadow:0px 5px 31px -1px rgba(0, 0, 0, 0.15);
+  -webkit-transition:  100ms ease-out; 
+       -moz-transition:  100ms ease-out; 
+         -o-transition:  100ms ease-out; 
+            transition:  100ms ease-out; 
+}
+div.large .make3D{
+  top:0;
+  left:0;
+  width:315px;
+  height:480px;
+  -webkit-transition:  300ms ease-out; 
+       -moz-transition:  300ms ease-out; 
+         -o-transition:  300ms ease-out; 
+            transition:  300ms ease-out; 
+}
+.large div.make3D{box-shadow:0px 5px 31px -1px rgba(0, 0, 0, 0);}
+.large div.flip-back{display:none;}
+.stats-container{
+  background:#fff;  
+  position:absolute;
+  top:382px;
+  left:0;
+  width:315px;
+  height: 400px;
+  padding: 30px 50px 20px 32px;
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out;
+}
+.make3D.animate .stats-container{
+  top:265px;
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out; 
+}
+.stats-container .product_name{
+  font-size: 20px;
+    color: #3c3c3f;
+    font-weight: 700;
+}
+.stats-container p{
+  font-size:15px;
+  color:#3c3f3f;  
+  padding:2px 0 20px 0;
+}
+.stats-container .product_price{
+  float:right;
+  color:#3c3c3c;
+  font-size:22px;
+  font-weight:600;
+}
+.image_overlay{
+  position:absolute;
+  top:0;
+  left:0; 
+  width:100%;
+  height:100%;
+  background:#c2c2c2;
+  opacity:0;  
+}
+.make3D.animate .image_overlay{
+  opacity:0.4;  
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out; 
+}
+.product-options{
+  padding:0;
+}
+.product-options strong{
+  font-weight:700;
+  color:#393c45;
+  font-size:14px;
+}
+.product-options span{  
+  color:#969699;
+  font-size:14px;
+  display:block;
+  margin-bottom:8px;
+}
+.add_to_cart{ 
+  position:absolute;
+  top:80px;
+  left:50%;
+  width:152px;
+  font-size:15px;
+  margin-left:-78px;
+  border:2px solid #fff;
+  color:#fff; 
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:10px 0; 
+  opacity:0;
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out; 
+}
+.add_to_cart:hover{ 
+  background:#fff;
+  color:#2c2c2c;
+  cursor:pointer;
+
+}
+.make3D.animate .add_to_cart{
+  opacity:1;  
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out;     
+}
+.view_gallery{  
+  position:absolute;
+  top:144px;
+  left:50%;
+  width:152px;
+  font-size:15px;
+  margin-left:-78px;
+  border:2px solid #fff;
+  color:#fff; 
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:10px 0; 
+  opacity:0;
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out; 
+}
+.view_gallery:hover{  
+  background:#fff;
+  color:#c2c2c2;
+  cursor:pointer;
+
+}
+.make3D.animate .view_gallery{
+  opacity:1;  
+  -webkit-transition: all 200ms ease-out; 
+       -moz-transition: all 200ms ease-out; 
+         -o-transition: all 200ms ease-out; 
+            transition: all 200ms ease-out;     
+}
+div.colors div{
+  margin-top:3px;
+  width:15px; 
+  height:15px;  
+  margin-right:5px;
+  float:left;
+}
+div.colors div span{
+  width:15px; 
+  height:15px; 
+  display:block;
+  border-radius:50%;
+}
+div.colors div span:hover{
+  width:17px;
+  height:17px;
+  margin:-1px 0 0 -1px;
+}
+div.c-blue span{background:#6e8cd5;}
+div.c-red span{background:#f56060;}
+div.c-green span{background:#44c28d;}
+div.c-white span{
+  background:#fff;
+  width:14px;
+  height:14px; 
+  border:1px solid #e8e9eb;
+}
+div.shadow{
+  width:335px;height:520px;
+  opacity:0;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:3;
+  display:none;
+  background: -webkit-linear-gradient(left,rgba(0,0,0,0.1),rgba(0,0,0,0.2));
+    background: -o-linear-gradient(right,rgba(0,0,0,0.1),rgba(0,0,0,0.2)); 
+    background: -moz-linear-gradient(right,rgba(0,0,0,0.1),rgba(0,0,0,0.2)); 
+    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.2)); 
+}
+.product-back div.shadow{
+  z-index:10;
+  opacity:1;
+  background: -webkit-linear-gradient(left,rgba(0,0,0,0.2),rgba(0,0,0,0.1));
+    background: -o-linear-gradient(right,rgba(0,0,0,0.2),rgba(0,0,0,0.1)); 
+    background: -moz-linear-gradient(right,rgba(0,0,0,0.2),rgba(0,0,0,0.1)); 
+    background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1)); 
+}
+.flip-back{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:30px;
+  height:30px;
+  cursor:pointer;
+}
+.cx, .cy{
+  background:#d2d5dc;
+  position:absolute;
+  width:0px;
+  top:15px;
+  right:15px;
+  height:3px;
+  -webkit-transition: all 250ms ease-in-out;                        /*For transition on touch*/
+     -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+     -o-transition: all 250ms ease-in-out;
+      transition: all 250ms ease-in-out;
+}
+.flip-back:hover .cx, .flip-back:hover .cy{
+  background:#979ca7;
+  -webkit-transition: all 250ms ease-in-out;
+     -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+     -o-transition: all 250ms ease-in-out;
+      transition: all 250ms ease-in-out;
+}
+.cx.s1, .cy.s1{ 
+  right:0;  
+  width:30px; 
+  -webkit-transition: all 100ms ease-out;
+     -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ms ease-out;
+     -o-transition: all 100ms ease-out;
+      transition: all 100ms ease-out;
+}
+.cy.s2{ 
+  -ms-transform: rotate(50deg); 
+  -webkit-transform: rotate(50deg); 
+  transform: rotate(50deg);    
+  -webkit-transition: all 100ms ease-out;
+     -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ms ease-out;
+     -o-transition: all 100ms ease-out;
+      transition: all 100ms ease-out;
+}
+.cy.s3{ 
+  -ms-transform: rotate(45deg); 
+  -webkit-transform: rotate(45deg); 
+  transform: rotate(45deg);    
+  -webkit-transition: all 100ms ease-out;
+     -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ms ease-out;
+     -o-transition: all 100ms ease-out;
+      transition: all 100ms ease-out;
+}
+.cx.s1{ 
+  right:0;  
+  width:30px; 
+  -webkit-transition: all 100ms ease-out;
+     -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ms ease-out;
+     -o-transition: all 100ms ease-out;
+      transition: all 100ms ease-out;
+}
+.cx.s2{ 
+  -ms-transform: rotate(140deg); 
+  -webkit-transform: rotate(140deg); 
+  transform: rotate(140deg);     
+  -webkit-transition: all 100ms ease-out;
+     -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ease-out;
+     -o-transition: all 100ms ease-out;
+      transition: all 100ms ease-out;
+}
+.cx.s3{ 
+  -ms-transform: rotate(135deg); 
+  -webkit-transform: rotate(135deg); 
+  transform: rotate(135deg);     
+  -webkit-transition: all 100ease-out;
+     -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ms ease-out;
+     -o-transition: all 100ms ease-out;
+      transition: all 100ms ease-out;
+}
+.carousel{
+  width:315px;
+  height:500px;
+  overflow:hidden;
+  position:relative;
+}
+.carousel ul{
+  position:absolute;
+  top:0;
+  left:0;
+}
+.carousel li{
+  width:315px;
+  height:500px;
+  float:left;
+  overflow:hidden;  
+}
+.carousel img{
+  margin-top: -22px;
+  width: 110%;
+}
+.arrows-perspective{
+  width:315px;
+  height:55px;
+  position: absolute;
+  top: 218px;
+  transform-style: preserve-3d;
+    transition: transform 5s;
+  perspective: 335px;
+}
+.carouselPrev, .carouselNext{
+  width: 50px;
+  height: 55px;
+  background: #ccc;
+  position: absolute; 
+  top:0;
+  transition: all 200ms ease-out; 
+  opacity:0.9;
+  cursor:pointer;
+}
+.carouselNext{
+  top:0;
+  right: -26px;
+  -webkit-transform: rotateY( -117deg );
+         -moz-transform: rotateY( -117deg );
+           -o-transform: rotateY( -117deg );
+              transform: rotateY( -117deg );
+        transition: all 200ms ease-out;       
+
+}
+.carouselNext.visible{
+    right:0;
+    opacity:0.8;
+    background: #fff;
+    -webkit-transform: rotateY( 0deg );
+         -moz-transform: rotateY( 0deg );
+           -o-transform: rotateY( 0deg );
+              transform: rotateY( 0deg );
+        transition: all 200ms ease-out; 
+}
+.carouselPrev{    
+  left:-26px;
+  top:0;
+  -webkit-transform: rotateY( 117deg );
+         -moz-transform: rotateY( 117deg );
+           -o-transform: rotateY( 117deg );
+              transform: rotateY( 117deg );
+        transition: all 200ms ease-out; 
+
+}
+.carouselPrev.visible{
+    left:0;
+    opacity:0.8;
+    background: #fff;
+    -webkit-transform: rotateY( 0deg );
+         -moz-transform: rotateY( 0deg );
+           -o-transform: rotateY( 0deg );
+              transform: rotateY( 0deg );
+        transition: all 200ms ease-out; 
+}
+.carousel .x, .carousel .y{
+  height:2px;
+  width:15px;
+  background:#c2c2c2;
+  position:absolute;
+  top:31px;
+  left:17px;
+  -ms-transform: rotate(45deg); 
+  -webkit-transform: rotate(45deg); 
+  transform: rotate(45deg); 
+}
+.carousel .x{
+  -ms-transform: rotate(135deg);  
+  -webkit-transform: rotate(135deg); 
+  transform: rotate(135deg);    
+  top:21px;
+}
+.carousel .carouselNext .x{
+  -ms-transform: rotate(45deg);   
+  -webkit-transform: rotate(45deg); 
+  transform: rotate(45deg);   
+}
+.carousel .carouselNext .y{
+  -ms-transform: rotate(135deg);  
+  -webkit-transform: rotate(135deg); 
+  transform: rotate(135deg);    
+}
+div.floating-cart{
+  position:absolute;
+  top:0;
+  left:0; 
+  width:315px;  
+  height:480px;
+  background:#fff;
+  z-index:200;
+  overflow:hidden;
+  box-shadow:0px 5px 31px -1px rgba(0, 0, 0, 0.15);
+  display:none;
+}
+
+div.floating-cart .stats-container{display:none;}
+div.floating-cart .product-front{width:100%; top:0; left:0;}
+div.floating-cart.moveToCart{
+  left: 75px !important;
+  top: 55px !important;
+  width: 47px;
+  height: 47px; 
+  -webkit-transition: all 800ms ease-in-out;
+     -moz-transition: all 800ms ease-in-out;
+    -ms-transition: all 800ms ease-in-out;
+     -o-transition: all 800ms ease-in-out;
+        transition: all 800ms ease-in-out; 
+}
+body.MakeFloatingCart div.floating-cart.moveToCart{ 
+  left: 90px !important;
+  top: 140px !important;
+  width: 21px;
+  height: 22px;
+  box-shadow:0px 5px 31px -1px rgba(0, 0, 0, 0);
+  -webkit-transition: all 200ms ease-out;
+     -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+     -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+}
+div.cart-icon-top{
+  position:absolute;
+  background:#fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/cart.png") 0 -3px no-repeat;
+  margin:0;
+  width:21px;
+  height:3px;
+  z-index:1;
+  top: 140px;
+  left: 90px;
+}
+div.cart-icon-bottom{
+  position:absolute;
+  background:#fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/cart.png") 0 -3px no-repeat;
+  margin:0;
+  width:21px;
+  height:19px;
+  z-index:1;
+  top: 143px;
+  left: 90px;
+}
+body.MakeFloatingCart div.cart-icon-top{z-index:30;}
+body.MakeFloatingCart div.cart-icon-bottom{z-index:300;}  
+.cart-item{ 
+  padding: 11px 0 5px 110px;
+  height: 62px;
+  width: 210px;
+  margin-left: -45px;
+  position:relative;
+  background:#fff;
+  -webkit-transition: all 1000ms ease-out;
+     -moz-transition: all 1000ms ease-out;
+    -ms-transition: all 1000ms ease-out;
+     -o-transition: all 1000ms ease-out;
+        transition: all 1000ms ease-out;
+}
+.cart-item.flash{background:#fffeb0;}
+.cart-item-border{
+  position:absolute;
+  bottom:0;
+  left:45px;
+  background:#edeff0;
+  height: 1px;
+  width: 230px;
+}
+.cart-item .img-wrap{
+  width:50px; 
+  height:50px; 
+  overflow:hidden;
+  border:1px solid #edeff0;
+  float:left;
+  margin-left:-65px;  
+}
+.cart-item img{width:100%; position:relative;top:-10px;}
+.cart-item strong{color:#5ff7d2; font-size:16px;}
+.cart-item span{
+  color: #393c45;
+    display: block;
+    font-size: 14px;
+ }
+
+.cart-item .delete-item{
+  background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/delete-item.png") 0 0 no-repeat;
+  width:15px;
+  height:15px;
+  float:right;
+  margin-right:18px;
+  display:none;
+}
+.cart-item:hover .delete-item{display:block;cursor:pointer}
+
+
+#info{
+  position: absolute;
+  top: 20px;
+  left: 676px;
+  text-align: center;
+  width: 413px;
+
+}
+#info p{font-size:15px; padding:3px;color:#b1b1b3}
+#info a{text-decoration:none;} 
+#checkout{
+  border: 2px solid #5ff7d2;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 9px;
+  position: absolute;
+  top: 137px;
+  left: 181px;
+  color: #5ff7d2;
+  display:none;
+}
+
+.product.large{
+  width:639px;
+  margin-bottom:25px;
+  overflow:hidden;
+  -webkit-transition: all 500ms ease-in-out;
+     -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+     -o-transition: all 500ms ease-in-out;
+        transition: all 500ms ease-in-out;
+}
+
+
+
+
+/* ---------------- */
+.floating-image-large{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+.info-large{
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    padding: 42px;
+    width: 245px;
+    height: 395px;
+    -webkit-transition: all 500ms ease-out;
+     -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+     -o-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+}
+.large .info-large{
+  left: 310px;
+  -webkit-transition: all 300ms ease-out;
+     -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+     -o-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+}
+
+.info-large h4{
+  text-transform:uppercase;
+  font-size:28px;
+  color:#000;
+  font-weight:400;
+  padding:0;
+}
+div.sku{
+    font-weight: 700;
+    color: #d0d0d0;
+    font-size: 12px;
+    padding-top: 11px;
+}
+div.sku strong{
+  color:#000;
+}
+.price-big{
+  font-size: 34px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 21px;
+}
+.price-big span{
+  color:#fff;
+  font-weight:400;
+  text-decoration:line-through;
+}
+
+.add-cart-large{
+    border: 3px solid #000;
+    font-size: 17px;
+    background: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    font-family: "Open Sans", sans-serif;
+    width: 246px;
+    margin-top: 38px; 
+    -webkit-transition: all 200ms ease-out;
+     -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+     -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+}
+.add-cart-large:hover{
+  color: #5ff7d2;
+  border-color:#5ff7d2;
+  -webkit-transition: all 200ms ease-out;
+     -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+     -o-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+      cursor:pointer;
+}
+.info-large h3{
+    letter-spacing: 1px;
+    color: #262626;
+    text-transform: uppercase;
+    font-size: 14px;
+  clear:left;
+  margin-top:20px;
+    font-weight: 700;
+  margin-bottom:3px;
+}
+
+
+
+.colors-large{
+  margin-bottom:38px;
+}
+.colors-large li{
+  float:left;
+  list-style:none;
+  margin-right:7px;
+  width:16px;
+  height:16px;
+}
+.colors-large li a{
+  float:left;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+}
+.colors-large li a:hover{
+  width:19px;
+  height:19px;
+  position:relative;
+  top:-1px;
+  left:-1px;
+}
+
+.sizes-large{
+}
+.sizes-large span{
+  font-weight:600;
+  color:#b0b0b0;
+}
+.sizes-large span:hover{color:#000;cursor:pointer;}
+
+.product.large:hover{
+  box-shadow:0px 5px 31px -1px rgba(0, 0, 0, 0.15); 
+}
+
+
+
+
+/*  LIST VIEW */
+
+   
+  </style>
+  <script type="text/javascript">
+    
+
+$(document).ready(function(){
+    
+  $(".largeGrid").click(function(){                     
+    $(this).find('a').addClass('active');
+    $('.smallGrid a').removeClass('active');
+    
+    $('.product').addClass('large').each(function(){                      
+    });           
+    setTimeout(function(){
+      $('.info-large').show();  
+    }, 200);
+    setTimeout(function(){
+
+      $('.view_gallery').trigger("click");  
+    }, 400);                
+    
+    return false;       
+  });
+  
+  $(".smallGrid").click(function(){           
+    $(this).find('a').addClass('active');
+    $('.largeGrid a').removeClass('active');
+    
+    $('div.product').removeClass('large');
+    $(".make3D").removeClass('animate');  
+    $('.info-large').fadeOut("fast");
+    setTimeout(function(){                
+        $('div.flip-back').trigger("click");
+    }, 400);
+    return false;
+  });   
+  
+  $(".smallGrid").click(function(){
+    $('.product').removeClass('large');     
+    return false;
+  });
+  
+  $('.colors-large a').click(function(){return false;});
+  
+  
+  $('.product').each(function(i, el){         
+
+    // Lift card and show stats on Mouseover
+    $(el).find('.make3D').hover(function(){
+        $(this).parent().css('z-index', "20");
+        $(this).addClass('animate');
+        $(this).find('div.carouselNext, div.carouselPrev').addClass('visible');     
+       }, function(){
+        $(this).removeClass('animate');     
+        $(this).parent().css('z-index', "1");
+        $(this).find('div.carouselNext, div.carouselPrev').removeClass('visible');
+    }); 
+    
+    // Flip card to the back side
+    $(el).find('.view_gallery').click(function(){ 
+      
+      $(el).find('div.carouselNext, div.carouselPrev').removeClass('visible');
+      $(el).find('.make3D').addClass('flip-10');      
+      setTimeout(function(){          
+      $(el).find('.make3D').removeClass('flip-10').addClass('flip90').find('div.shadow').show().fadeTo( 80 , 1, function(){
+          $(el).find('.product-front, .product-front div.shadow').hide();                             
+        });
+      }, 50);
+      
+      setTimeout(function(){
+        $(el).find('.make3D').removeClass('flip90').addClass('flip190');
+        $(el).find('.product-back').show().find('div.shadow').show().fadeTo( 90 , 0);
+        setTimeout(function(){        
+          $(el).find('.make3D').removeClass('flip190').addClass('flip180').find('div.shadow').hide();           
+          setTimeout(function(){
+            $(el).find('.make3D').css('transition', '100ms ease-out');      
+            $(el).find('.cx, .cy').addClass('s1');
+            setTimeout(function(){$(el).find('.cx, .cy').addClass('s2');}, 100);
+            setTimeout(function(){$(el).find('.cx, .cy').addClass('s3');}, 200);        
+            $(el).find('div.carouselNext, div.carouselPrev').addClass('visible');       
+          }, 100);
+        }, 100);      
+      }, 150);      
+    });     
+    
+    // Flip card back to the front side
+    $(el).find('.flip-back').click(function(){    
+      
+      $(el).find('.make3D').removeClass('flip180').addClass('flip190');
+      setTimeout(function(){
+        $(el).find('.make3D').removeClass('flip190').addClass('flip90');
+    
+        $(el).find('.product-back div.shadow').css('opacity', 0).fadeTo( 100 , 1, function(){
+          $(el).find('.product-back, .product-back div.shadow').hide();
+          $(el).find('.product-front, .product-front div.shadow').show();
+        });
+      }, 50);
+      
+      setTimeout(function(){
+        $(el).find('.make3D').removeClass('flip90').addClass('flip-10');
+        $(el).find('.product-front div.shadow').show().fadeTo( 100 , 0);
+        setTimeout(function(){            
+          $(el).find('.product-front div.shadow').hide();
+          $(el).find('.make3D').removeClass('flip-10').css('transition', '100ms ease-out');   
+          $(el).find('.cx, .cy').removeClass('s1 s2 s3');     
+        }, 100);      
+      }, 150);      
+      
+    });       
+  
+    makeCarousel(el);
+  });
+  
+  $('.add-cart-large').each(function(i, el){
+    $(el).click(function(){
+      var carousel = $(this).parent().parent().find(".carousel-container");
+      var img = carousel.find('img').eq(carousel.attr("rel"))[0];           
+      var position = $(img).offset(); 
+
+      var productName = $(this).parent().find('h3').get(0).innerHTML;   
+      
+  
+      $("body").append('<div class="floating-cart"></div>');    
+      var cart = $('div.floating-cart');    
+      $("<img src='"+img.src+"' class='floating-image-large' />").appendTo(cart);
+      
+      $(cart).css({'top' : position.top + 'px', "left" : position.left + 'px'}).fadeIn("slow").addClass('moveToCart');    
+      setTimeout(function(){$("body").addClass("MakeFloatingCart");}, 800);
+      
+      setTimeout(function(){
+      $('div.floating-cart').remove();
+      $("body").removeClass("MakeFloatingCart");
+
+
+      var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+img.src+"' alt='' /></div><span>"+productName+"</span><div class='cart-item-border'></div><div class='delete-item'></div></div>";      
+
+      $("#cart .empty").hide();     
+      $("#cart").append(cartItem);
+      $("#checkout").fadeIn(500);
+      
+      $("#cart .cart-item").last()
+        .addClass("flash")
+        .find(".delete-item").click(function(){
+          $(this).parent().fadeOut(300, function(){
+            $(this).remove();
+            if($("#cart .cart-item").size() == 0){
+              $("#cart .empty").fadeIn(500);
+              $("#checkout").fadeOut(500);
+            }
+          })
+        });
+        setTimeout(function(){
+        $("#cart .cart-item").last().removeClass("flash");
+      }, 10 );
+      
+    }, 1000);
+      
+      
+    });
+  })
+  
+  /* ----  Image Gallery Carousel   ---- */
+  function makeCarousel(el){
+  
+    
+    var carousel = $(el).find('.carousel ul');
+    var carouselSlideWidth = 315;
+    var carouselWidth = 0;  
+    var isAnimating = false;
+    var currSlide = 0;
+    $(carousel).attr('rel', currSlide);
+    
+    // building the width of the casousel
+    $(carousel).find('li').each(function(){
+      carouselWidth += carouselSlideWidth;
+    });
+    $(carousel).css('width', carouselWidth);
+    
+    // Load Next Image
+    $(el).find('div.carouselNext').on('click', function(){
+      var currentLeft = Math.abs(parseInt($(carousel).css("left")));
+      var newLeft = currentLeft + carouselSlideWidth;
+      if(newLeft == carouselWidth || isAnimating === true){return;}
+      $(carousel).css({'left': "-" + newLeft + "px",
+                   "transition": "300ms ease-out"
+                 });
+      isAnimating = true;
+      currSlide++;
+      $(carousel).attr('rel', currSlide);
+      setTimeout(function(){isAnimating = false;}, 300);      
+    });
+    
+    // Load Previous Image
+    $(el).find('div.carouselPrev').on('click', function(){
+      var currentLeft = Math.abs(parseInt($(carousel).css("left")));
+      var newLeft = currentLeft - carouselSlideWidth;
+      if(newLeft < 0  || isAnimating === true){return;}
+      $(carousel).css({'left': "-" + newLeft + "px",
+                   "transition": "300ms ease-out"
+                 });
+      isAnimating = true;
+      currSlide--;
+      $(carousel).attr('rel', currSlide);
+      setTimeout(function(){isAnimating = false;}, 300);            
+    });
+  }
+  
+  $('.sizes a span, .categories a span').each(function(i, el){
+    $(el).append('<span class="x"></span><span class="y"></span>');
+    
+    $(el).parent().on('click', function(){
+      if($(this).hasClass('checked')){        
+        $(el).find('.y').removeClass('animate');  
+        setTimeout(function(){
+          $(el).find('.x').removeClass('animate');              
+        }, 50); 
+        $(this).removeClass('checked');
+        return false;
+      }
+      
+      $(el).find('.x').addClass('animate');   
+      setTimeout(function(){
+        $(el).find('.y').addClass('animate');
+      }, 100);  
+      $(this).addClass('checked');
+      return false;
+    });
+  });
+  
+  $('.add_to_cart').click(function(){
+    var productCard = $(this).parent();
+    var position = productCard.offset();
+    var productImage = $(productCard).find('img').get(0).src;
+    var productName = $(productCard).find('.product_name').get(0).innerHTML; 
+          
+
+    $("body").append('<div class="floating-cart"></div>');    
+    var cart = $('div.floating-cart');    
+    productCard.clone().appendTo(cart);
+    $(cart).css({'top' : position.top + 'px', "left" : position.left + 'px'}).fadeIn("slow").addClass('moveToCart');    
+    setTimeout(function(){$("body").addClass("MakeFloatingCart");}, 800);
+    setTimeout(function(){
+      $('div.floating-cart').remove();
+      $("body").removeClass("MakeFloatingCart");
+
+
+      var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong></strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";     
+
+      $("#cart .empty").hide();     
+      $("#cart").append(cartItem);
+      $("#checkout").fadeIn(500);
+      
+      $("#cart .cart-item").last()
+        .addClass("flash")
+        .find(".delete-item").click(function(){
+          $(this).parent().fadeOut(300, function(){
+            $(this).remove();
+            if($("#cart .cart-item").size() == 0){
+              $("#cart .empty").fadeIn(500);
+              $("#checkout").fadeOut(500);
+            }
+          })
+        });
+        setTimeout(function(){
+        $("#cart .cart-item").last().removeClass("flash");
+      }, 10 );
+      
+    }, 1000);
+  });
+});
+
+
+  </script>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="menu.js"></script>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid bg-1 text-center">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Yesari</a>
+    </div>
+    
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">How to
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="howto">Crafts & Decor</a></li>
+          <li><a href="howto">Fashion</a></li>
+          <li><a href="howto">Tech Projects</a></li>
+        </ul></li>
+
+        <li class="active"><a href="buy">Buy here</a>
+
+        </li>
+        <li><a href="posturproject">Post your project</a></li>
+
+      </ul>
+
+
+      <form class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!--  -----------------------------------------------------------------   -->
+
+<br>
+<br>
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<div id="wrapper">
+<div class="cart-icon-top">
+</div>
+
+<div class="cart-icon-bottom">
+</div>
+
+
+<div id="sidebar">
+  <h4>CART</h4>
+    <div id="cart">
+      <span class="empty"><br>No items in cart.</span>       
+    </div>
+    
+    <h3>CATEGORIES</h3>
+    <div class="checklist categories">
+      <ul>
+            <li><a href=""><span></span>New Arrivals</a></li>
+            <li><a href=""><span></span>Decors</a></li>
+            <li><a href=""><span></span>Accesories</a></li>
+            <li><a href=""><span></span>Bags</a></li>
+            <li><a href=""><span></span>Dress</a></li>
+            <li><a href=""><span></span>Woolen clothes</a></li>
+            <li><a href=""><span></span>Jwellery</a></li>
+            <li><a href=""><span></span>Science Projects</a></li>
+                        
+        </ul>
+    </div>
+    
+    
+    
+    
+</div>
+
+
+       
+       <h1>&nbsp Find required materials here </h1><br>
+    
+
+
+
+<div id="grid">
+    <div class="product">
+      <div class="info-large">
+          <h4>Arduino Kit</h4>
+            <div class="sku">
+              PRODUCT SKU: <strong>89356</strong>
+            </div>
+             
+            <div class="price-big">
+              <span>Rs. 7200</span> Rs. 7200
+            </div>
+             
+            
+            
+            <button class="add-cart-large">Add To Cart</button>                          
+                         
+        </div>
+        <div class="make3D">
+            <div class="product-front">
+                <div class="shadow"></div>
+                <img src="/images/arduinokit.jpg" alt="" />
+                <div class="image_overlay"></div>
+                <div class="add_to_cart">Add to cart</div>
+                <div class="view_gallery">More Info</div>                
+                <div class="stats">         
+                    <div class="stats-container">
+                        <span class="product_price">Rs. 7200</span>
+                        <span class="product_name">Arduino Kit</span>    
+                        <p></p>                                            
+                        
+                                         
+                    </div>                         
+                </div>
+            </div>
+            
+            <div class="product-back text-center">
+                <div class="shadow"></div>
+                <div class="carousel">
+                    <ul class="carousel-container">
+                      <li><br><br><br><br><br>
+                      <h4>Contains:</h4>
+                       <br> &nbsp&nbspArduino (x 1) &nbsp&nbsp&nbsp
+
+Arduino Cable ( x 1)<br>
+
+Jumper Wires (PP) x 20&nbsp&nbsp&nbsp
+
+Jumper Wires(PH) x 10<br>
+
+Jumper Wires (HH) x 10&nbsp&nbsp&nbsp
+
+LED (x 15)<br>
+
+RGB LED (x 3)&nbsp&nbsp&nbsp
+
+Resistors (x 20)<br>
+
+IR Sensor (x 1)&nbsp&nbsp&nbsp
+
+Buzzer (x 1)<br>
+
+9V Battery ( x 1)&nbsp&nbsp&nbsp
+
+Battery Cap (x 1)<br>
+
+Motor Driver ( x 1)&nbsp&nbsp&nbsp
+
+DC Motor (x 2)<br>
+
+Switch (x 2)&nbsp&nbsp&nbsp
+
+Bread Board (x 1)&nbsp&nbsp
+LDR (x1)
+
+                      </li>
+                    </ul>
+                        
+                  
+                    
+                </div>
+                <div class="flip-back">
+                    <div class="cy"></div>
+                    <div class="cx"></div>
+                </div>
+            </div>    
+        </div>  
+    </div>
+    
+    
+    <div class="product">
+    <div class="info-large">
+          <h4></h4>
+            <div class="sku">
+              PRODUCT SKU: <strong>89356</strong>
+            </div>
+             
+            <div class="price-big">
+              <span></span>
+            </div>
+             
+            <
+            
+            <button class="add-cart-large">Add To Cart</button>                          
+                         
+        </div>
+        <div class="make3D">
+            <div class="product-front">
+                <div class="shadow"></div>
+                <img src="/images/woolred.jpg" alt="" />
+                <div class="image_overlay"></div>
+                <div class="add_to_cart">Add to cart</div>
+                <div class="view_gallery">More Info</div>
+                <div class="stats">         
+                    <div class="stats-container">
+                        <span class="product_price">Rs. 160</span>
+                        <span class="product_name">Red Wool</span>    
+                        <p></p>                                            
+                        
+                      <!--  <div class="product-options">
+                        <strong>SIZES</strong>
+                        <span>XS, S, M, L, XL, XXL</span>
+                        <strong>COLORS</strong>
+                        <div class="colors">
+                            <div class="c-blue"><span></span></div>
+                            <div class="c-red"><span></span></div>
+                            <div class="c-white"><span></span></div>
+                            <div class="c-green"><span></span></div>
+                        </div>
+                    </div>    -->                   
+                    </div>                         
+                </div>
+            </div>
+            
+            <div class="product-back text-center">
+                <div class="shadow"></div>
+                <div class="carousel">
+                    <ul class="carousel-container">
+                      <li><br><br><br><br><br>
+                      <h4>For Knitting</h4>
+                       <br> Available in different colors as well.
+
+                      </li>
+                    </ul>
+                        
+                  
+                    
+                </div>
+                <div class="flip-back">
+                    <div class="cy"></div>
+                    <div class="cx"></div>
+                </div>
+            </div>    
+        </div>  
+    </div>
+
+
+
+
+    
+    <div class="product">
+    <div class="info-large">
+          <h4>Plywood</h4>
+            <div class="sku">
+              PRODUCT SKU: <strong>89356</strong>
+            </div>
+             
+            <div class="price-big">
+              <span>$43</span> $39
+            </div>
+             
+            <h3>COLORS</h3>
+            <div class="colors-large">
+                <ul>
+                    <li><a href="" style="background:#222"><span></span></a></li>
+                    <li><a href="" style="background:#6e8cd5"><span></span></a></li>
+                    <li><a href="" style="background:#f56060"><span></span></a></li>
+                    <li><a href="" style="background:#44c28d"><span></span></a></li>
+                </ul> 
+            </div>
+
+            <h3>SIZE</h3>
+            <div class="sizes-large">
+        <span>XS</span>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+                <span>XXL</span>
+            </div>
+            
+            <button class="add-cart-large">Add To Cart</button>                          
+                         
+        </div>
+        <div class="make3D">        
+            <div class="product-front">
+                <div class="shadow"></div>
+                <img src="/images/ply.jpg" alt="" />
+                <div class="image_overlay"></div>
+                <div class="add_to_cart">Add to cart</div>
+                <div class="view_gallery">More Info</div>
+                <div class="stats">         
+                    <div class="stats-container">
+                        <span class="product_price">Rs. 300/piece</span>
+                        <span class="product_name">Plywood</span>    
+                        <p></p>                                            
+                        
+                       <!-- <div class="product-options">
+                        <strong>SIZES</strong>
+                        <span>XS, S, M, L, XL, XXL</span>
+                        <strong>COLORS</strong>
+                        <div class="colors">
+                            <div class="c-blue"><span></span></div>
+                            <div class="c-red"><span></span></div>
+                            <div class="c-white"><span></span></div>
+                            <div class="c-green"><span></span></div>
+                        </div>
+                    </div>    -->                   
+                    </div>                         
+                </div>
+            </div>
+            
+            <div class="product-back text-center">
+                <div class="shadow"></div>
+                <div class="carousel">
+                    <ul class="carousel-container">
+                      <li><br><br><br><br><br>
+                      <h4>For decorative purposes</h4>
+                       <br> Rs 300 per piece<br>
+                       Size: 10cm x 10cm<br>
+                       Total no: 6 pieces
+
+                      </li>
+                    </ul>
+                        
+                  
+                    
+                </div>
+                <div class="flip-back">
+                    <div class="cy"></div>
+                    <div class="cx"></div>
+                </div>
+            </div>    
+        </div>  
+    </div>
+    
+    <br>
+    <br>
+     <br>
+    <br> <br>
+    <br> <br>
+    <br>
+     <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br>
+    
+    <div class="product">
+    <div class="info-large">
+          <h4>Knitting Needles</h4>
+            <div class="sku">
+              PRODUCT SKU: <strong>89356</strong>
+            </div>
+             
+            <div class="price-big">
+              <span>Rs. 150</span> Rs. 150
+            </div>
+             
+                     
+            <button class="add-cart-large">Add To Cart</button>                          
+                         
+        </div>
+
+        <div class="make3D">
+            <div class="product-front">
+                <div class="shadow"></div>
+                <img src="/images/knit.jpg" alt="" />
+                <div class="image_overlay"></div>
+                <div class="add_to_cart">Add to cart</div>
+                <div class="view_gallery">More Info</div>
+                <div class="stats">         
+                    <div class="stats-container">
+                        <span class="product_price">Rs. 150</span>
+                        <span class="product_name">Knitting Needles</span>    
+                        <p></p>                                            
+                        
+                                   
+                    </div>                         
+                </div>
+            </div>
+            
+            <div class="product-back">
+                <div class="shadow"></div>
+                <div class="carousel text-center">
+                    <ul class="carousel-container">
+                        <li><br><br><br><br><br><center><p><h4>Knitting various designs</h4>
+                        Available in different design</p></center></li>
+                        
+                    </ul>
+                    
+                </div>
+                <div class="flip-back">
+                    <div class="cy"></div>
+                    <div class="cx"></div>
+                </div>
+            </div>    
+        </div>  
+    </div>
+    
+    <div class="product">
+    <div class="info-large">
+          <h4>12V Battery</h4>
+            <div class="sku">
+              PRODUCT SKU: <strong>89356</strong>
+            </div>
+             
+            <div class="price-big">
+              <span></span>
+            </div>
+             
+            
+            <button class="add-cart-large">Add To Cart</button>                          
+                         
+        </div>
+        <div class="make3D">
+            <div class="product-front">
+                <div class="shadow"></div>
+                <img src="/images/battery.jpg" alt="" />
+                <div class="image_overlay"></div>
+                <div class="add_to_cart">Add to cart</div>
+                <div class="view_gallery">More Info</div>
+                <div class="stats">         
+                    <div class="stats-container">
+                        <span class="product_price">Rs. 120</span>
+                        <span class="product_name">12V Battery</span>    
+                        <p></p>                                            
+                        
+                          
+                    </div>                         
+                </div>
+            </div>
+            
+            <div class="product-back text-center">
+                <div class="shadow"></div>
+                <div class="carousel">
+                    <ul class="carousel-container">
+                        <li><br><br><br><br><br><h4>12V Battery<br>For Computing</li></h4>
+                    </ul>
+                    
+                </div>
+                <div class="flip-back">
+                    <div class="cy"></div>
+                    <div class="cx"></div>
+                </div>
+            </div>    
+        </div>  
+    </div>
+    
+    
+    <div class="product">
+    <div class="info-large">
+          <h4>Bar Magnet</h4>
+            <div class="sku">
+              PRODUCT SKU: <strong>89356</strong>
+            </div>
+             
+            <div class="price-big">
+              <span></span> 
+            </div>
+             
+            
+            
+            <button class="add-cart-large">Add To Cart</button>                          
+                         
+        </div>
+        <div class="make3D">
+            <div class="product-front">
+                <div class="shadow"></div>
+                <img src="/images/magnet.jpg" alt="" />
+                <div class="image_overlay"></div>
+                <div class="add_to_cart">Add to cart</div>
+                <div class="view_gallery">More Info</div>
+                <div class="stats">         
+                    <div class="stats-container">
+                        <span class="product_price">Rs. 20</span>
+                        <span class="product_name">Bar Magnet</span>    
+                        <p></p>                                            
+                        
+                               
+                    </div>                         
+                </div>
+            </div>
+            
+            <div class="product-back text-center">
+                <div class="shadow"></div>
+                <div class="carousel">
+                    <ul class="carousel-container">
+                        <li><br><br><br><br><br><h4>Bar magnet<br>Generates Magnetic field<br></h4>
+                        Used for generating electromotive force.</li></h4>
+                    </ul>
+                    
+                </div>
+                <div class="flip-back">
+                    <div class="cy"></div>
+                    <div class="cx"></div>
+                </div>
+            </div>    
+        </div>  
+    </div>
+    
+   
+    
+    
+</div>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<footer class="container-fluid text-center">
+
+      <p><br />© Asra 2017
+  
+        
+        <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="about" color="white"><span class="glyphicon glyphicon-chevron-right"></span> About us</a></li>
+        <li><a href="https://www.facebook.com"><span class="glyphicon glyphicon-chevron-right"></span> Contact Us on Facebook</a></li>
+
+      </ul></p>
+</footer>
+
+
+  
+</html>

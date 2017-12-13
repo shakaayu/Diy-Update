@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LogIn Page</title><br>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+  <style>
+
+body {
+  position: fixed;
+  overflow-y: scroll;
+  width:100%;
+  top: -20px;
+  right: 0px;
+  left: 0px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  background-size: cover;
+  -webkit-filter: blur(0px);
+
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+button:hover {
+    opacity: 1.6;
+}
+
+
+.bg-1 { 
+       background-color: #0000; /* black */
+        color: #00ACC1;
+    }
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      margin-right: 0;
+      margin-left:0;
+    }
+     
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #00ACC1;
+      height: 100%;
+    }
+    footer {
+      background-color: #fff;
+      color: black;
+      
+      height: 130px;
+      width: 100%;
+      bottom: 0;
+      
+      
+    }
+
+
+    /****************************/
+
+    :: Login Section
+  -------------------------------------------------- */
+        #login {
+            padding-top: 50px
+        }
+        #login .form-wrap {
+            width: 30%;
+            margin: 0 auto;
+        }
+        #login h1 {
+            color: #1b1b34;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        #login .form-group {
+            margin-bottom: 25px;
+        }
+        #login .checkbox {
+            margin-bottom: 20px;
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+        #login .checkbox.show:before {
+            content: '\e013';
+            color: #1fa67b;
+            font-size: 17px;
+            margin: 1px 0 0 3px;
+            position: absolute;
+            pointer-events: none;
+            font-family: 'Glyphicons Halflings';
+        }
+        #login .checkbox .character-checkbox {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        #login .checkbox .label {
+            color: #6d6d6d;
+            font-size: 13px;
+            font-weight: normal;
+        }
+        #login .btn.btn-custom {
+            font-size: 14px;
+          margin-bottom: 20px;
+        }
+        #login .forget {
+            font-size: 13px;
+          text-align: center;
+          display: block;
+        }
+
+        /*    --------------------------------------------------
+          :: Inputs & Buttons
+          -------------------------------------------------- */
+        .form-control {
+            color: #212121;
+        }
+        .btn-custom {
+            color: #fff;
+          background-color: #1b1b34;
+        }
+        .btn-custom:hover,
+        .btn-custom:focus {
+            color: #fff;
+        }
+
+      
+</style>
+<script type="text/javascript">
+  
+// var attempt = 3; // Variable to count number of attempts.
+// // Below function Executes on click of login button.
+// function validate(){
+// var username = document.getElementById("username").value;
+// var password = document.getElementById("password").value;
+// if ( username == "user" && password == "password"){
+// alert ("Login successfully");
+// window.open("/");
+//  // Redirecting to other page.
+
+// }
+// else{
+//   alert("Invalid Input");
+
+//   window.open("login");
+
+// /*alert("You have left "+attempt+" attempt;");
+// // Disabling fields after 3 attempts.
+// if( attempt == 0){
+// document.getElementById("username").disabled = true;
+// document.getElementById("password").disabled = true;
+// document.getElementById("submit").disabled = true;
+// return false;
+// }*/
+
+// }
+// }
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid bg-1 text-center">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/"><img src="/images/yesari.png" height="35px" width="80px"></a>
+    </div>
+    
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="howto">How to
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="howto">Crafts & Decor</a></li>
+          <li><a href="howto">Fashion</a></li>
+          <li><a href="howto">Tech Projects</a></li>
+        </ul></li>
+
+        <li><a href="buy">Buy here</a>
+
+        </li>
+        <li><a href="posturproject">Post your project</a></li>
+
+      </ul>
+
+
+      <form class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<body>
+
+<!-- <form style="background-color:#f1f1f1" method="post">
+<center><br><br>
+<h1>LOGIN</h1>
+  <div class="container">
+    <label><b>Username</b><br></label>
+    <input type="text" name="username" id = "username"><br><br>
+
+    <label><b>Password</b><br></label>
+    <input type="password" name="password" id = "password"></br>
+
+    <button type="submit" class="btn btn-success" style="width:50% display:inline-block" onclick="validate()">Log in</button>
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <br><button type="button" class="btn btn-warning">Cancel</button><br>
+    <span class="psw"> <b><a href="#">Forgot password?</a></b></span><br>
+    <span class="text"><b>Don't have an account <b><a href="register">Sign Up now</a></span>
+    
+</form>
+</center> -->
+
+
+<section id="login">
+            <div class="container" >
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="form-wrap">
+                        <h1>Log in with your username and password</h1>
+                          <h2><%= typeof error!='undefined' ? error : '' %></h2>
+
+                            <form role="form" action="/login" method="post" id="login-form" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="username" class="sr-only">Username</label>
+                                    <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="key" class="sr-only">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="checkbox">
+                                    <span class="character-checkbox" onclick="showPassword()"></span>
+                                    <span class="label">Show password</span>
+                                </div>
+                                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                            </form>
+                            <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                            <hr>
+                      </div>
+                </div> <!-- /.col-xs-12 -->
+              </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </section>
+
+        <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">×</span>
+                  <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Forget your password</h4>
+              </div>
+              <div class="modal-body">
+                <p>Send us email at kunotes@gmail.com</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-custom" data-dismiss="modal">Ok</button>
+              </div>
+            </div> <!-- /.modal-content -->
+          </div> <!-- /.modal-dialog -->
+        </div> <!-- /.modal -->
+
+        <script>
+                function showPassword() {
+          
+          var key_attr = $('#key').attr('type');
+          
+          if(key_attr != 'text') {
+              
+              $('.checkbox').addClass('show');
+              $('#key').attr('type', 'text');
+              
+          } else {
+              
+              $('.checkbox').removeClass('show');
+              $('#key').attr('type', 'password');
+              
+            }
+          
+          } 
+        </script>
+
+        
+
+</body>
+<footer class="container-fluid text-center">
+
+    <br><br><br><br><br> <br><hr> <p>© Asra 2017
+  
+        
+        <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="about"><span class="glyphicon glyphicon-chevron-right"></span> About us</a></li>
+        <li><a href="https://www.facebook.com"><span class="glyphicon glyphicon-chevron-right"></span> Contact Us on Facebook</a></li>
+
+      </ul></p>
+</footer>
+
+</html>

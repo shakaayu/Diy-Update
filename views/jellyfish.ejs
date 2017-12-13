@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+     /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .bg-1 { 
+       background-color: #0000; /* Cyan */
+        color: #00ACC1;
+    }
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      margin-right: 0;
+      margin-left:0;
+    }
+     
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 0px;
+      background-color: #00ACC1;
+      height: 100%;
+    }
+
+    
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #fff;
+      color: black;
+
+      height: 100px;
+      width: auto;
+      
+      
+    }
+      
+header {
+    margin-top: 0;
+    
+    background: url("https://68.media.tumblr.com/32dcc13d54ee00ee573e3ccbe941921c/tumblr_o8b83oX4p71tah8dwo1_500.jpg" ); /*  background image */
+    min-height: 400px;
+    background-size: cover;
+    display: table;
+    width: 91.5vw;
+}
+
+header h1 {
+    text-align: center;
+    color: blue;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    text-shadow: 2px 3px rgba(0,0,0,0.75);
+}
+
+.background-bar {
+    background: #dedede;
+    height: 0;
+    -webkit-box-shadow: inset 0px 4px 12px 0px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow:    inset 0px 4px 12px 0px rgba(50, 50, 50, 0.35);
+    box-shadow:         inset 0px 4px 12px 0px rgba(50, 50, 50, 0.35);
+}
+
+.main-body {
+    background: #ffffff;
+    -webkit-box-shadow: 0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow:    0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+    box-shadow:         0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+}
+
+.content-holder {
+    margin-top: -140px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 2px;
+}
+
+.content-description {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #fff;
+    height: 130px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+}
+
+.author-social {
+    position: absolute;
+    margin-top: -35px;
+}
+.author-social-left {
+    left : 0;
+    width: 40%;
+    text-align: right;
+}
+.author-social-right {
+    right : 0;
+    width: 40%;
+}
+.author-social img {
+    background: #e8e8e8;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+}
+
+.author-avatar {
+    text-align:center;
+    margin-top: -70px;
+}
+.author-avatar img {
+    width: 100px;
+    border: 4px solid #e8e8e8;
+    -webkit-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+}
+.author-name {
+    text-align:center;
+}
+.blog-info {
+    text-align: center;
+}
+
+.content-body {
+    background: #fff;
+    min-height: 600px;
+    padding: 40px 5px;
+    font-size: 1.2em;
+    color: #303030;
+}
+
+/*@media(max-width:768px){
+    header {
+        min-height: 300px;
+    }
+    .author-avatar {
+        margin-top: -50px;
+    }
+  .author-avatar img {
+      width: 75px;
+  }
+  .author-name h3 {
+      font-size: 1.2em;
+  }
+  .author-social {
+      margin-top: -25px;
+  }
+  .author-social img {
+      width: 32px;
+  }*/
+}
+
+
+
+    </style>
+  </head>
+  <body >
+    
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid bg-1 text-center">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/"><img src="/images/yesari.png" height="35px" width="80px"></a>
+    </div>
+    
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="howto">How to
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="howto">Crafts & Decor</a></li>
+          <li><a href="howto">Fashion</a></li>
+          <li><a href="howto">Tech Projects</a></li>
+        </ul></li>
+
+        <li><a href="buy">Buy here</a>
+
+        </li>
+        <li><a href="posturproject">Post your project</a></li>
+
+      </ul>
+
+
+      <form class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+    
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+
+
+    
+    <header>
+        
+        
+        
+    </header>
+    
+    <div class="background-bar">
+        
+    </div>
+    
+    <section class="container-fluid main-body">
+        <section class="row">
+            
+            <div class="hidden-xs col-sm-1 col-md-2">
+                
+            </div>
+            
+            <div class="col-xs-12 col-sm-10 col-md-8">
+            
+                <div class="content-holder">
+                    
+                    <div class="content-description text-center">
+                    <h1><center><b>DIY JELLYFISH CROCHET</center></b></h1><br>
+                        
+                                  <h3><center><u>MATERIALS REQUIRED:</u></center></h3>
+                                 <p><h4> <br>1. Yarn<br><br>
+                                  2. Needles<br><br>
+                                   3. Cotton<br></p></h4>
+                                    
+                                        
+                        
+                       
+                        <!--<div class="row blog-info">
+                            <div class="col-xs-12 col-sm-6">
+                                <span class="lead text-muted"><i class="fa fa-clock-o"></i> Published: 37 days ago</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <span class="lead text-muted"><i class="fa fa-tags"></i> some, tags, here</span>
+                            </div>
+                        </div>-->
+                        
+                    </div>
+                    
+                    
+                    <div class="content-body text-center">
+<br><br><br><br><br>
+<h3><center><u>CROCHET JELLYFISH INSTRUCTIONS</u></center></h3><br>
+<img src = "/images/jelly.gif" height="250px" width="350px"><br>
+
+
+<p><br>Round 1: Work 8 sc into a magic circle. Join with sl st to first sc.<br><br>
+
+Round 2: Ch 1. Work 2 sc into each stitch around. Join with sl st to first sc.<br><br>
+
+Round 3: Ch 1. *Work 1 sc into next stitch, 2 sc into next stitch.* Repeat around. Join with sl st to first sc.<br><br>
+
+Round 4: Ch 1. *Work 1 sc into each of next 2 stitches, 2 sc into next stitch.* Repeat around. Join with sl st to first sc.<br><br>
+
+Round 5-7: Ch 1. Work 1 sc into each stitch around. Join with sl st to first sc.<br><br>
+
+Round 8-10: Ch 1. Work 1 sc into each stitch around. Join with sl st to first sc.<br><br>
+
+
+Fasten off, and weave in ends.
+</p>
+ 
+
+
+
+                    <!--
+                    text here-->
+
+
+
+
+                       
+                    </div>
+                    
+                </div>
+            
+            </div>
+            
+            <div class="hidden-xs col-sm-1 col-md-2">
+                
+            </div>
+            
+        </section>
+    </section>
+    
+
+</body>
+
+
+<footer class="container-fluid text-center">
+
+      <br><hr><p><br />© Asra 2017
+  
+        
+        <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="#" color="white"><span class="glyphicon glyphicon-chevron-right"></span> About us</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> Contact Us</a></li>
+
+      </ul></p>
+</footer>
+
+    
+  
+</html>
